@@ -2,6 +2,7 @@ package com.ty.manytomanybi.dto;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ public class Student {
 	private String name;
 	private int age;
 	
-	@ManyToMany(mappedBy = "students")
+	@ManyToMany(mappedBy = "students" , cascade = CascadeType.ALL)
 	private List<Course> courses;
 
 	public int getId() {
